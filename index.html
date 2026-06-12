@@ -3,7 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
+  
+  <!--SEO OPTIMIZATIONS: Enhanced meta tags for better search engine visibility -->
+  <title>Brayson Imbambi | Full Stack Web & Mobile App Developer Portfolio</title>
+  <meta name="description" content="Brayson Imbambi - Professional full stack web developer, mobile app developer, and UI/UX designer. View portfolio projects including Foxwide Company, Developer Toolkit Hub, SSD Lifespan Analyzer, and AI models. Expert in React, Flutter, Node.js, and modern web technologies.">
+  <meta name="keywords" content="web developer, mobile app developer, full stack developer, portfolio, Brayson Imbambi, React, Flutter, Node.js, web design, AI developer, Kenya developer, software engineer portfolio">
+  <meta name="author" content="Brayson Imbambi">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  
+  <!-- Open Graph / Social Media Meta Tags (for better sharing on LinkedIn, Facebook, etc.) -->
+  <meta property="og:title" content="Brayson Imbambi | Full Stack Web & Mobile Developer Portfolio">
+  <meta property="og:description" content="Professional portfolio showcasing web development, mobile app development, and AI projects. Specialized in React, Flutter, Node.js, and UI/UX design.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://braysonimbambi.dev">
+  <meta property="og:image" content="https://braysonimbambi.dev/og-image.jpg">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brayson Imbambi | Developer Portfolio">
+  <meta name="twitter:description" content="Full stack web developer, mobile app developer, and designer. Check out my projects and certifications.">
+  
+  <!-- Canonical URL to prevent duplicate content issues -->
+  <link rel="canonical" href="https://braysonimbambi.dev">
+  
+  <!-- Preconnect for performance optimization -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  
   <style>
     :root {
       --primary-color: #4f46e5;
@@ -199,35 +227,96 @@
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- JSON-LD Structured Data for better SEO (rich snippets) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Brayson Imbambi",
+    "url": "https://braysonimbambi.dev",
+    "image": "brayson.jpg",
+    "jobTitle": "Full Stack Web & Mobile App Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance Developer"
+    },
+    "sameAs": [
+      "https://github.com/braysonimbambi455",
+      "https://linkedin.com/in/brayson-imbambi",
+      "https://twitter.com/braysonimbambi"
+    ],
+    "knowsAbout": ["Web Development", "Mobile App Development", "Flutter", "React", "Node.js", "AI Development", "UI/UX Design"],
+    "description": "Professional full stack web developer and mobile app developer specializing in React, Flutter, Node.js, and AI integration."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Foxwide company limited",
+        "description": "Responsive business website built with HTML, CSS, and JavaScript"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Developer Toolkit Hub",
+        "description": "All-in-one dashboard for developer tools with dark mode and real-time search"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "SSD lifespan analyzer",
+        "description": "Cross-platform SSD endurance analysis tool using Python"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "AI Model Development",
+        "description": "Machine learning models built with TensorFlow and Scikit-learn"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Leantex company limited website",
+        "description": "Django-based platform for service booking management"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
 <header>
   <nav class="container" aria-label="Main Navigation">
-    <a href="#hero" class="logo">MyPortfolio</a>
+    <a href="#hero" class="logo" aria-label="Homepage">MyPortfolio</a>
     <div class="nav-links">
-      <a href="#hero" class="nav-link active">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#portfolio" class="nav-link">Portfolio</a>
-      <a href="#certifications" class="nav-link">Certifications</a>
-      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#hero" class="nav-link active" aria-label="Navigate to Home section">Home</a>
+      <a href="#about" class="nav-link" aria-label="Navigate to About section">About</a>
+      <a href="#portfolio" class="nav-link" aria-label="Navigate to Portfolio section">Portfolio</a>
+      <a href="#certifications" class="nav-link" aria-label="Navigate to Certifications section">Certifications</a>
+      <a href="#contact" class="nav-link" aria-label="Navigate to Contact section">Contact</a>
     </div>
   </nav>
 </header>
 
-<!-- Hero Section -->
+<!-- Hero Section with improved semantic heading structure -->
 <section id="hero">
   <div class="container">
     <h1>Hello, I'm Brayson Imbambi</h1>
     <p>A passionate web, mobile app developer and designer crafting beautiful, functional websites and innovative mobile applications to bring your ideas to life and turn them into powerful digital experiences.</p>
-    <a href="#portfolio" class="cta-btn">View My Work</a>
+    <a href="#portfolio" class="cta-btn" aria-label="View portfolio projects">View My Work</a>
   </div>
 </section>
 
-<!-- About Section -->
+<!-- About Section with enhanced descriptive text for SEO -->
 <section id="about">
   <div class="container">
-    <img src="brayson.jpg" alt="brayson's portrait" />
+    <img src="brayson.jpg" alt="Brayson Imbambi - Full Stack Web Developer and Mobile App Developer portrait" />
     <div class="content">
       <h2>About Me</h2>
       <p>I am a full stack web developer, mobile app developer and designer with interest in creating dynamic, user friendly websites and applications. I enjoy transforming complex ideas into seamless, well designed digital solutions. I love turning complex problems into elegant solutions with code.</p>
@@ -248,119 +337,116 @@
   </div>
 </section>
 
-<!-- Portfolio Section -->
+<!-- Portfolio Section with semantic article markup and improved alt text -->
 <section id="portfolio">
   <h2>Portfolio</h2>
   <div id="portfolio-grid">
     <!-- Project 1 -->
     <article class="project-card">
-      <img class="project-image" src="foxwide company limited screenshot.png" alt="Business Website Screenshot">
+      <img class="project-image" src="foxwide company limited screenshot.png" alt="Foxwide company limited responsive business website screenshot showing modern web design">
       <div class="project-content">
         <h3 class="project-title">Foxwide company limited</h3>
         <p class="project-description">I developed a fully responsive static website for foxwide company limited, using HTML, CSS and JavaScript to deliver an engaging and seamless user experience across all devices.</p>
         <div class="project-links">
-          <a href="https://github.com/braysonimbambi455/Foxwide-computer-solutions" target="_blank">Code</a> |
-          <a href="https://foxwide-computer-solutions.vercel.app/" target="_blank">Live Demo</a>
+          <a href="https://github.com/braysonimbambi455/Foxwide-computer-solutions" target="_blank" rel="noopener noreferrer">Code</a> |
+          <a href="https://foxwide-computer-solutions.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
         </div>
       </div>
     </article>
 
     <!-- Project 2-->
-<article class="project-card">
-  <img class="project-image" src="devtoolkit .png" alt="Developer Toolkit Hub Screenshot">
-  <div class="project-content">
-    <h3 class="project-title">Developer Toolkit Hub</h3>
-    <p class="project-description">An all-in-one dashboard organizing important developer tools in a single interface. Features include real-time search, category filtering, persistent dark mode and responsive design. Built with HTML5, CSS3 and vanilla JavaScript to help developers quickly access JSON formatters, API clients, AI tools, color palettes, Git references, converters, and speed tests without endless bookmarking.</p>
-    <div class="project-links">
-      <a href="https://github.com/braysonimbambi455/Developer_toolkit_hub" target="_blank">Code</a>|
-      <a href="https://developer-toolkit-hub.vercel.app/" target="_blank">Live Demo</a>
-    </div>
-  </div>
-</article>
-<!-- Project 3-->
     <article class="project-card">
-      <img class="project-image" src="ssd lifespan analyzer.png" alt="ssd lifespan analyzer Screenshot">
+      <img class="project-image" src="devtoolkit .png" alt="Developer Toolkit Hub dashboard interface with developer tools and dark mode">
+      <div class="project-content">
+        <h3 class="project-title">Developer Toolkit Hub</h3>
+        <p class="project-description">An all-in-one dashboard organizing important developer tools in a single interface. Features include real-time search, category filtering, persistent dark mode and responsive design. Built with HTML5, CSS3 and vanilla JavaScript to help developers quickly access JSON formatters, API clients, AI tools, color palettes, Git references, converters, and speed tests without endless bookmarking.</p>
+        <div class="project-links">
+          <a href="https://github.com/braysonimbambi455/Developer_toolkit_hub" target="_blank" rel="noopener noreferrer">Code</a>|
+          <a href="https://developer-toolkit-hub.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Project 3-->
+    <article class="project-card">
+      <img class="project-image" src="ssd lifespan analyzer.png" alt="SSD lifespan analyzer software interface showing drive health metrics">
       <div class="project-content">
         <h3 class="project-title">SSD lifespan analyzer</h3>
         <p class="project-description">Developed a cross platform SSD lifespan analysis tool using Python and Windows batch scripting, enabling users to detect their actual SSD model, calculate remaining endurance based on real-time input and estimate lifespan in years with customizable usage patterns.</p>
         <div class="project-links">
-          <a href="https://github.com/braysonimbambi455/ssd_lifespan_analyzer" target="_blank">Code</a>|
-          <a href="https://ssd-lifespan-analyzer.vercel.app/" target="_blank">Live Demo</a>
+          <a href="https://github.com/braysonimbambi455/ssd_lifespan_analyzer" target="_blank" rel="noopener noreferrer">Code</a>|
+          <a href="https://ssd-lifespan-analyzer.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
         </div>
       </div>
     </article>
 
     <!-- Project 4-->
     <article class="project-card">
-      <img class="project-image" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="AI Model Screenshot">
+      <img class="project-image" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Artificial intelligence and machine learning model development visualization">
       <div class="project-content">
         <h3 class="project-title">AI Model Development (Google Colab)</h3>
         <p class="project-description">Developed and trained artificial intelligence models using Python in Google Colab, including data preprocessing, model training, evaluation, and visualization with TensorFlow, Scikit-learn and Pandas.</p>
         <div class="project-links">
-          <a href="https://github.com/braysonimbambi455/ARTIFICIAL-INTELIGENCE-PROJECTS" target="_blank">Code</a>
+          <a href="https://github.com/braysonimbambi455/ARTIFICIAL-INTELIGENCE-PROJECTS" target="_blank" rel="noopener noreferrer">Code</a>
         </div>
       </div>
     </article>
 
- <!-- Project 5-->
+    <!-- Project 5-->
     <article class="project-card">
-      <img class="project-image" src="leantex-home-pic.png" alt="Portfolio Template Screenshot">
+      <img class="project-image" src="leantex-home-pic.png" alt="Leantex company limited website homepage showing business management platform">
       <div class="project-content">
         <h3 class="project-title">Leantex company limited website</h3>
-        <p class="project-description">The Leantex Platform is a web-based system designed to help Leantex Company Limited manage service bookings, customers and business operations efficiently. It was developed using Django and Python for the backend, with HTML5, CSS3 and Bootstrap for the frontend and PostgreSQL as the database.
-</p>
+        <p class="project-description">The Leantex Platform is a web-based system designed to help Leantex Company Limited manage service bookings, customers and business operations efficiently. It was developed using Django and Python for the backend, with HTML5, CSS3 and Bootstrap for the frontend and PostgreSQL as the database.</p>
         <div class="project-links">
-          <a href="https://github.com/braysonimbambi455/leantex" target="_blank">Code</a> |
-          <a href="https://leantex-company-limited.onrender.com" target="_blank">Live Demo</a>
+          <a href="https://github.com/braysonimbambi455/leantex" target="_blank" rel="noopener noreferrer">Code</a> |
+          <a href="https://leantex-company-limited.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
         </div>
       </div>
     </article>
-     
-
-
   </div>
 </section>
 
 <!-- Certifications Section -->
 <section id="certifications">
-  <h2>Certifications</h2>
+  <h2>Certifications & Credentials</h2>
   <div class="cert-grid">
     <!-- Certification 1 -->
     <div class="cert-card">
       <div class="cert-icon">
-        <img src="freecode logo.png" alt="Free Code Camp Logo" style="width:50px; height:auto;">
+        <img src="freecode logo.png" alt="Free Code Camp certification logo" style="width:50px; height:auto;">
       </div>
       <h3>Responsive Web Design</h3>
       <p>Free Code Camp</p>
-      <a href="responsive web design.png" target="_blank">View Certificate</a>
+      <a href="responsive web design.png" target="_blank" rel="noopener noreferrer">View Certificate</a>
     </div>
 
     <!-- Certification 2 -->
     <div class="cert-card">
       <div class="cert-icon">
-        <img src="IBM logo.jpg" alt="IBM Logo" style="width:50px; height:auto;">
+        <img src="IBM logo.jpg" alt="IBM certification logo" style="width:50px; height:auto;">
       </div>
       <h3>AI Fundamentals</h3>
       <p>IBM</p>
-      <a href="IBM AI fundamentals certificate.png" target="_blank">View Certificate</a>
+      <a href="IBM AI fundamentals certificate.png" target="_blank" rel="noopener noreferrer">View Certificate</a>
     </div>
     <!-- Certification 3 -->
     <div class="cert-card">
       <div class="cert-icon">
-        <img src="IBM logo.jpg" alt="IBM Logo" style="width:50px; height:auto;">
+        <img src="IBM logo.jpg" alt="IBM cybersecurity certification logo" style="width:50px; height:auto;">
       </div>
       <h3>Cybersecurity Fundamentals</h3>
       <p>IBM</p>
-      <a href="Cyber security certificate.png" target="_blank">View Certificate</a>
+      <a href="Cyber security certificate.png" target="_blank" rel="noopener noreferrer">View Certificate</a>
     </div>
     <!-- Certification 4 -->
     <div class="cert-card">
       <div class="cert-icon">
-        <img src="IBM logo.jpg" alt="IBM Logo" style="width:50px; height:auto;">
+        <img src="IBM logo.jpg" alt="IBM Generative AI certification logo" style="width:50px; height:auto;">
       </div>
       <h3>Generative AI in Action</h3>
       <p>IBM</p>
-      <a href="IBM Generative AI in Action certificate.png" target="_blank">View Certificate</a>
+      <a href="IBM Generative AI in Action certificate.png" target="_blank" rel="noopener noreferrer">View Certificate</a>
     </div>
   </div>
 </section>
@@ -369,24 +455,25 @@
 <section id="contact">
   <h2>Get In Touch</h2>
   <div class="container">
-    <p>If you’d like to discuss a project or just say hello, feel free to get in touch!</p>
+    <p>If you'd like to discuss a project or just say hello, feel free to get in touch!</p>
     <p style="text-align:center; margin-top: 2rem;">
-      <strong>Email:</strong> <a href="mailto:braysonimbambi455@gmail.com">braysonimbambi455@gmail.com</a><br/>
-      <strong>Phone:</strong> <a href="tel:+254793814747">+254793814747</a><br/>
-       <strong>WhatsApp:</strong> 
-  <a href="https://wa.me/254793814747" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:24px; vertical-align:middle; margin-right:5px;">
-    Chat with me
+      <strong>Email:</strong> <a href="mailto:braysonimbambi455@gmail.com" aria-label="Send email to Brayson">braysonimbambi455@gmail.com</a><br/>
+      <strong>Phone:</strong> <a href="tel:+254793814747" aria-label="Call Brayson">+254793814747</a><br/>
+      <strong>WhatsApp:</strong> 
+      <a href="https://wa.me/254793814747" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp chat icon" style="width:24px; vertical-align:middle; margin-right:5px;">
+        Chat with me
+      </a>
     </p>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Braysonimbambi. All rights reserved.</p>
+  <p>© 2026 Brayson Imbambi. All rights reserved.</p>
   <p>
-    <a href="https://twitter.com/" target="_blank" aria-label="Twitter">Twitter</a> |
-    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">LinkedIn</a> |
-    <a href="https://github.com/" target="_blank" aria-label="GitHub">GitHub</a>
+    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile">Twitter</a> |
+    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a> |
+    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
   </p>
 </footer>
 
@@ -404,16 +491,19 @@
     });
   });
 
-  // Contact form
+  // Contact form (fixed: added null checks to prevent errors)
   const form = document.getElementById("contact-form");
   const successMessage = document.getElementById("form-success");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    successMessage.style.display = "block";
-    form.reset();
-  });
+  if (form && successMessage) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      successMessage.style.display = "block";
+      form.reset();
+    });
+  }
 </script>
-<a href="https://wa.me/254793814747" target="_blank" style="
+
+<a href="https://wa.me/254793814747" target="_blank" rel="noopener noreferrer" style="
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -428,7 +518,7 @@
   font-size: 2rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   z-index: 999;
-">
+" aria-label="Contact on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
 </body>
