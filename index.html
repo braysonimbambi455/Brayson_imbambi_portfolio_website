@@ -130,7 +130,7 @@
     #portfolio h2 { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 2rem; color: var(--primary-color); text-align: center; }
     #portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       max-width: 1100px;
       margin: 0 auto;
@@ -143,13 +143,61 @@
       display: flex;
       flex-direction: column;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
     }
     .project-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); cursor: pointer; }
-    .project-image { width: 100%; height: 180px; object-fit: cover; }
-    .project-content { padding: 1rem 1.25rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
-    .project-title { font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--secondary-color); }
-    .project-description { flex: 1; font-size: 0.95rem; color: #4b5563; margin-bottom: 1rem; }
-    .project-links a { text-decoration: none; color: var(--accent-color); font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease; }
+    
+    /* 
+      UPDATED: Uniform image size AND full image visible (no cropping)
+      - Fixed height for consistent card layout
+      - object-fit: contain ensures the entire image is visible within the box
+      - background-color and a subtle pattern help visualize the image area nicely
+      - maintain aspect ratio without distortion
+    */
+    .project-image { 
+      width: 100%; 
+      height: 200px;          /* fixed height for uniform card dimensions */
+      object-fit: contain;    /* FULL image visible, no cropping, preserves aspect ratio */
+      background-color: #f8fafc; /* neutral background for empty spaces or transparency */
+      background-image: radial-gradient(circle at 1px 1px, #e2e8f0 1px, transparent 1px);
+      background-size: 16px 16px;
+      display: block;
+      padding: 0.5rem;        /* small breathing space around image */
+      transition: transform 0.2s ease;
+    }
+    /* optional subtle zoom on hover for the image container, not required but nice */
+    .project-card:hover .project-image {
+      transform: scale(1.02);
+    }
+    
+    .project-content { 
+      padding: 1rem 1.25rem 1.5rem; 
+      display: flex; 
+      flex-direction: column; 
+      flex: 1;
+    }
+    .project-title { 
+      font-family: var(--font-heading); 
+      font-size: 1.25rem; 
+      margin-bottom: 0.5rem; 
+      color: var(--secondary-color);
+      line-height: 1.3;
+    }
+    .project-description { 
+      flex: 1; 
+      font-size: 0.95rem; 
+      color: #4b5563; 
+      margin-bottom: 1rem;
+    }
+    .project-links a { 
+      text-decoration: none; 
+      color: var(--accent-color); 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      transition: color 0.3s ease; 
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
     .project-links a:hover { color: var(--primary-color); }
 
     /* Certifications */
@@ -224,6 +272,10 @@
       nav { flex-wrap: wrap; height: auto; }
       .nav-links { width: 100%; justify-content: center; margin-top: 0.5rem; gap: 1rem; flex-wrap: wrap; }
       #about .container { flex-direction: column; align-items: center; }
+      .project-image { height: 180px; } /* slightly smaller on mobile but still uniform */
+    }
+    @media (max-width: 480px) {
+      .project-image { height: 170px; }
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -337,7 +389,7 @@
   </div>
 </section>
 
-<!-- Portfolio Section with semantic article markup and improved alt text -->
+<!-- Portfolio Section: all images have same container dimensions and FULL image visible (object-fit: contain) -->
 <section id="portfolio">
   <h2>Portfolio</h2>
   <div id="portfolio-grid">
