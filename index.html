@@ -126,6 +126,14 @@
       margin: 0 auto 2.5rem; 
       color: #d1d5db; 
     }
+    
+    /* ============ CTA BUTTONS IN HERO ============ */
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
     #hero .cta-btn {
       background-color: white;
       color: var(--primary-color);
@@ -144,6 +152,24 @@
       background-color: var(--accent-color);
       color: white;
       box-shadow: 0 6px 10px rgba(236,72,153,0.5);
+    }
+    #hero .cta-btn-secondary {
+      background-color: transparent;
+      color: white;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      font-size: 1.125rem;
+      border-radius: 9999px;
+      border: 2px solid white;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    #hero .cta-btn-secondary:hover {
+      background-color: white;
+      color: var(--primary-color);
+      box-shadow: 0 6px 10px rgba(255,255,255,0.3);
     }
 
     /* ============ ABOUT ============ */
@@ -380,6 +406,7 @@
       #about .container { flex-direction: column; align-items: center; }
       .project-image { height: 180px; }
       #hero h1 { font-size: 2rem; }
+      .hero-buttons { flex-direction: column; align-items: center; }
     }
     @media (max-width: 480px) {
       .project-image { height: 170px; }
@@ -507,7 +534,10 @@
   <div class="container">
     <h1>Brayson Imbambi</h1>
     <p>Full Stack Web Developer &amp; Mobile App Developer from Kenya. I craft beautiful, functional websites and innovative mobile applications to bring your ideas to life and turn them into powerful digital experiences.</p>
-    <a href="#portfolio" class="cta-btn" aria-label="View Brayson's portfolio projects">View My Work</a>
+    <div class="hero-buttons">
+      <a href="#portfolio" class="cta-btn" aria-label="View Brayson's portfolio projects">View My Work</a>
+      <a href="#contact" class="cta-btn-secondary" aria-label="Contact Brayson for projects">Let's Talk</a>
+    </div>
   </div>
 </section>
 
