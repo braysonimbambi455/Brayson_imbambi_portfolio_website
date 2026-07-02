@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
+  <!-- ============ FAVICON FOR BRAND RECOGNITION ============ -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  
   <!-- ============ PRIMARY SEO META TAGS ============ -->
   <title>Brayson Imbambi - Full Stack Web & Mobile App Developer | Portfolio Kenya</title>
   <meta name="description" content="Brayson Imbambi is a professional Full Stack Web Developer, Mobile App Developer, and UI/UX Designer based in Kenya. Expert in React, Flutter, Node.js, and AI development. View my portfolio projects including Foxwide Company, Developer Toolkit Hub, SSD Lifespan Analyzer, and AI Models.">
@@ -226,8 +233,34 @@
       flex: 1; 
       font-size: 0.95rem; 
       color: #4b5563; 
+      margin-bottom: 0.75rem;
+    }
+    
+    /* ============ PROJECT TECH TAGS ============ */
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
       margin-bottom: 1rem;
     }
+    .project-tag {
+      background-color: var(--light-color);
+      color: var(--primary-color);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      border: 1px solid var(--primary-color);
+      transition: all 0.3s ease;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .project-tag:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
     .project-links a { 
       text-decoration: none; 
       color: var(--accent-color); 
@@ -512,7 +545,13 @@
       <img class="project-image" src="leantex-home-pic.png" alt="Leantex Company Limited website - Django-based business management platform" loading="lazy" itemprop="screenshot">
       <div class="project-content">
         <h3 class="project-title" itemprop="name">Leantex Company Limited</h3>
-        <p class="project-description" itemprop="description">A web-based system for managing service bookings, customers, and business operations. Built with Django, Python, PostgreSQL, and Bootstrap. Features include customer management, booking tracking, and business analytics.</p>
+        <p class="project-description" itemprop="description">A web-based system for managing service bookings, customers, and business operations. Features include customer management, booking tracking, and business analytics.</p>
+        <div class="project-tags">
+          <span class="project-tag">Django</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Bootstrap</span>
+        </div>
         <div class="project-links">
           <a href="https://github.com/braysonimbambi455/leantex" target="_blank" rel="noopener noreferrer" aria-label="View Leantex source code on GitHub">Code</a> |
           <a href="https://leantex-company-limited.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="View Leantex live demo">Live Demo</a>
@@ -522,10 +561,16 @@
   
     <!-- Project 2: Developer Toolkit Hub -->
     <article class="project-card" itemscope itemtype="https://schema.org/SoftwareApplication">
-      <img class="project-image" src="devtoolkit .png" alt="Developer Toolkit Hub - all-in-one dashboard for developer tools" loading="lazy" itemprop="screenshot">
+      <img class="project-image" src="devtoolkit.png" alt="Developer Toolkit Hub - all-in-one dashboard for developer tools" loading="lazy" itemprop="screenshot">
       <div class="project-content">
         <h3 class="project-title" itemprop="name">Developer Toolkit Hub</h3>
-        <p class="project-description" itemprop="description">An all-in-one dashboard organizing essential developer tools. Features real-time search, category filtering, persistent dark mode, and responsive design. Tools include JSON formatters, API clients, color palettes, and Git references.</p>
+        <p class="project-description" itemprop="description">An all-in-one dashboard organizing essential developer tools. Features real-time search, category filtering, persistent dark mode, and responsive design.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML5</span>
+          <span class="project-tag">CSS3</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">LocalStorage</span>
+        </div>
         <div class="project-links">
           <a href="https://github.com/braysonimbambi455/Developer_toolkit_hub" target="_blank" rel="noopener noreferrer" aria-label="View Developer Toolkit Hub source code">Code</a> |
           <a href="https://developer-toolkit-hub.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View Developer Toolkit Hub live demo">Live Demo</a>
@@ -535,10 +580,16 @@
     
     <!-- Project 3: SSD Lifespan Analyzer -->
     <article class="project-card" itemscope itemtype="https://schema.org/SoftwareApplication">
-      <img class="project-image" src="ssd lifespan analyzer.png" alt="SSD Lifespan Analyzer - cross-platform drive health analysis tool" loading="lazy" itemprop="screenshot">
+      <img class="project-image" src="ssd-lifespan-analyzer.png" alt="SSD Lifespan Analyzer - cross-platform drive health analysis tool" loading="lazy" itemprop="screenshot">
       <div class="project-content">
         <h3 class="project-title" itemprop="name">SSD Lifespan Analyzer</h3>
-        <p class="project-description" itemprop="description">A cross-platform SSD endurance analysis tool using Python and Windows batch scripting. Detects SSD models, calculates remaining endurance, and estimates lifespan with customizable usage patterns.</p>
+        <p class="project-description" itemprop="description">A cross-platform SSD endurance analysis tool that detects SSD models, calculates remaining endurance, and estimates lifespan with customizable usage patterns.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Windows Batch</span>
+          <span class="project-tag">CLI</span>
+          <span class="project-tag">Data Analysis</span>
+        </div>
         <div class="project-links">
           <a href="https://github.com/braysonimbambi455/ssd_lifespan_analyzer" target="_blank" rel="noopener noreferrer" aria-label="View SSD Lifespan Analyzer source code">Code</a> |
           <a href="https://ssd-lifespan-analyzer.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View SSD Lifespan Analyzer live demo">Live Demo</a>
@@ -551,7 +602,14 @@
       <img class="project-image" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Artificial Intelligence and Machine Learning model development" loading="lazy" itemprop="screenshot">
       <div class="project-content">
         <h3 class="project-title" itemprop="name">AI Model Development</h3>
-        <p class="project-description" itemprop="description">Developed and trained machine learning and AI models using Python, TensorFlow, Scikit-learn, and Pandas in Google Colab. Includes data preprocessing, model training, evaluation, and visualization.</p>
+        <p class="project-description" itemprop="description">Developed and trained machine learning and AI models including data preprocessing, model training, evaluation, and visualization.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">TensorFlow</span>
+          <span class="project-tag">Scikit-learn</span>
+          <span class="project-tag">Pandas</span>
+          <span class="project-tag">Google Colab</span>
+        </div>
         <div class="project-links">
           <a href="https://github.com/braysonimbambi455/ARTIFICIAL-INTELIGENCE-PROJECTS" target="_blank" rel="noopener noreferrer" aria-label="View AI Projects source code on GitHub">Code</a>
         </div>
@@ -560,10 +618,16 @@
 
     <!-- Project 5: Foxwide Company -->
     <article class="project-card" itemscope itemtype="https://schema.org/SoftwareApplication">
-      <img class="project-image" src="foxwide company limited screenshot.png" alt="Foxwide Company Limited - responsive business website" loading="lazy" itemprop="screenshot">
+      <img class="project-image" src="foxwide-company-limited-screenshot.png" alt="Foxwide Company Limited - responsive business website" loading="lazy" itemprop="screenshot">
       <div class="project-content">
         <h3 class="project-title" itemprop="name">Foxwide Company Limited</h3>
-        <p class="project-description" itemprop="description">A fully responsive static website for Foxwide Company Limited. Built with HTML5, CSS3, and JavaScript to deliver an engaging and seamless user experience across all devices.</p>
+        <p class="project-description" itemprop="description">A fully responsive static website delivering an engaging and seamless user experience across all devices.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML5</span>
+          <span class="project-tag">CSS3</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">Responsive Design</span>
+        </div>
         <div class="project-links">
           <a href="https://github.com/braysonimbambi455/Foxwide-computer-solutions" target="_blank" rel="noopener noreferrer" aria-label="View Foxwide Company source code">Code</a> |
           <a href="https://foxwide-computer-solutions.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View Foxwide Company live demo">Live Demo</a>
@@ -582,41 +646,41 @@
     <!-- Certification 1 -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
-        <img src="freecode logo.png" alt="FreeCodeCamp certification logo" width="50" height="50" loading="lazy">
+        <img src="freecode-logo.png" alt="FreeCodeCamp certification logo" width="50" height="50" loading="lazy">
       </div>
       <h3 itemprop="name">Responsive Web Design</h3>
       <p itemprop="credentialCategory">FreeCodeCamp</p>
-      <a href="responsive web design.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
+      <a href="responsive-web-design.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
     </div>
 
     <!-- Certification 2 -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
-        <img src="IBM logo.jpg" alt="IBM certification logo" width="50" height="50" loading="lazy">
+        <img src="IBM-logo.jpg" alt="IBM certification logo" width="50" height="50" loading="lazy">
       </div>
       <h3 itemprop="name">AI Fundamentals</h3>
       <p itemprop="credentialCategory">IBM</p>
-      <a href="IBM AI fundamentals certificate.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
+      <a href="IBM-AI-fundamentals-certificate.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
     </div>
 
     <!-- Certification 3 -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
-        <img src="IBM logo.jpg" alt="IBM cybersecurity certification logo" width="50" height="50" loading="lazy">
+        <img src="IBM-logo.jpg" alt="IBM cybersecurity certification logo" width="50" height="50" loading="lazy">
       </div>
       <h3 itemprop="name">Cybersecurity Fundamentals</h3>
       <p itemprop="credentialCategory">IBM</p>
-      <a href="Cyber security certificate.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
+      <a href="Cyber-security-certificate.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
     </div>
 
     <!-- Certification 4 -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
-        <img src="IBM logo.jpg" alt="IBM Generative AI certification logo" width="50" height="50" loading="lazy">
+        <img src="IBM-logo.jpg" alt="IBM Generative AI certification logo" width="50" height="50" loading="lazy">
       </div>
       <h3 itemprop="name">Generative AI in Action</h3>
       <p itemprop="credentialCategory">IBM</p>
-      <a href="IBM Generative AI in Action certificate.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
+      <a href="IBM-Generative-AI-in-Action-certificate.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
     </div>
   </div>
 </section>
@@ -632,61 +696,4 @@
         <strong>Phone:</strong> <a href="tel:+254793814747" aria-label="Call Brayson Imbambi">+254 793 814 747</a><br/>
         <strong>WhatsApp:</strong> 
         <a href="https://wa.me/254793814747" target="_blank" rel="noopener noreferrer" aria-label="Chat with Brayson on WhatsApp">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp chat icon" width="24" height="24" style="vertical-align:middle; margin-right:5px;">
-          Chat with me
-        </a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer>
-  <p>&copy; 2026 Brayson Imbambi. All rights reserved.</p>
-  <p>
-    <a href="https://twitter.com/braysonimbambi" target="_blank" rel="noopener noreferrer" aria-label="Brayson's Twitter profile">Twitter</a> |
-    <a href="https://linkedin.com/in/brayson-imbambi" target="_blank" rel="noopener noreferrer" aria-label="Brayson's LinkedIn profile">LinkedIn</a> |
-    <a href="https://github.com/braysonimbambi455" target="_blank" rel="noopener noreferrer" aria-label="Brayson's GitHub profile">GitHub</a>
-  </p>
-</footer>
-
-<!-- ============ JAVASCRIPT ============ -->
-<script>
-  // Active nav link highlighting on scroll
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
-  
-  window.addEventListener("scroll", () => {
-    let scrollPos = window.scrollY + 80;
-    sections.forEach(section => {
-      if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-        navLinks.forEach(link => link.classList.remove("active"));
-        document.querySelector(`.nav-links a[href="#${section.id}"]`)?.classList.add("active");
-      }
-    });
-  });
-
-  // Smooth scroll for navigation links
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-</script>
-
-<!-- ============ FLOATING WHATSAPP BUTTON ============ -->
-<a href="https://wa.me/254793814747" target="_blank" rel="noopener noreferrer" 
-   style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; 
-          border-radius: 50%; width: 60px; height: 60px; display: flex; justify-content: center; 
-          align-items: center; font-size: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 999;"
-   aria-label="Contact Brayson on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-</body>
-</html>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp chat icon"
