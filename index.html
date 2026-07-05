@@ -316,21 +316,34 @@
     }
     .cert-card {
       background: var(--light-color);
-      padding: 1.5rem;
+      padding: 1.5rem 1rem;
       border-radius: 12px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.08);
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .cert-card:hover { transform: translateY(-6px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
-    .cert-card .cert-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .cert-card .cert-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
     .cert-card h3 { 
       font-family: var(--font-heading); 
       font-size: 1.25rem; 
       color: var(--secondary-color); 
-      margin-bottom: 0.5rem; 
+      margin-bottom: 0.2rem; 
     }
-    .cert-card p { font-size: 1rem; color: var(--text-color); margin-bottom: 1rem; }
+    .cert-card .cert-issuer { font-size: 0.95rem; color: #4b5563; margin-bottom: 0.25rem; }
+    .cert-card .cert-date {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      background: #e0e7ff;
+      padding: 0.2rem 1rem;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
     .cert-card a {
       display: inline-block;
       background: var(--primary-color);
@@ -341,6 +354,7 @@
       font-weight: 600;
       text-decoration: none;
       transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 0.25rem;
     }
     .cert-card a:hover { background: var(--accent-color); transform: translateY(-2px); }
 
@@ -675,43 +689,47 @@
   <h2>Certifications &amp; Credentials</h2>
   <div class="cert-grid">
     
-    <!-- Certification 1 -->
+    <!-- Certification 1: Responsive Web Design -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
         <img src="freecode-logo.png" alt="FreeCodeCamp certification logo" width="50" height="50" loading="lazy">
       </div>
       <h3 itemprop="name">Responsive Web Design</h3>
-      <p itemprop="credentialCategory">FreeCodeCamp</p>
+      <div class="cert-issuer" itemprop="credentialCategory">FreeCodeCamp</div>
+      <div class="cert-date"><i class="far fa-calendar-alt" style="margin-right:6px;"></i>September 18, 2025</div>
       <a href="responsive-web-design.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
     </div>
 
-    <!-- Certification 2 -->
+    <!-- Certification 2: AI Fundamentals -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
         <img src="IBM-logo.jpg" alt="IBM certification logo" width="50" height="50" loading="lazy">
       </div>
       <h3 itemprop="name">AI Fundamentals</h3>
-      <p itemprop="credentialCategory">IBM</p>
+      <div class="cert-issuer" itemprop="credentialCategory">IBM</div>
+      <div class="cert-date"><i class="far fa-calendar-alt" style="margin-right:6px;"></i>March 20, 2026</div>
       <a href="IBM-AI-fundamentals-certificate.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
     </div>
 
-    <!-- Certification 3 -->
+    <!-- Certification 3: Cybersecurity Fundamentals -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
         <img src="IBM-logo.jpg" alt="IBM cybersecurity certification logo" width="50" height="50" loading="lazy">
       </div>
       <h3 itemprop="name">Cybersecurity Fundamentals</h3>
-      <p itemprop="credentialCategory">IBM</p>
+      <div class="cert-issuer" itemprop="credentialCategory">IBM</div>
+      <div class="cert-date"><i class="far fa-calendar-alt" style="margin-right:6px;"></i>March 23, 2026</div>
       <a href="Cyber-security-certificate.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
     </div>
 
-    <!-- Certification 4 -->
+    <!-- Certification 4: Generative AI in Action -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
         <img src="IBM-logo.jpg" alt="IBM Generative AI certification logo" width="50" height="50" loading="lazy">
       </div>
       <h3 itemprop="name">Generative AI in Action</h3>
-      <p itemprop="credentialCategory">IBM</p>
+      <div class="cert-issuer" itemprop="credentialCategory">IBM</div>
+      <div class="cert-date"><i class="far fa-calendar-alt" style="margin-right:6px;"></i>May 02, 2026</div>
       <a href="IBM-Generative-AI-in-Action-certificate.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
     </div>
   </div>
