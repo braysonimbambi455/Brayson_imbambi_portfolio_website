@@ -122,7 +122,7 @@
 
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
-    /* ============ HEADER ============ */
+    /* ============ HEADER - MENUS & DARK MODE MOVED TO RIGHT ============ */
     header {
       background-color: var(--bg-header);
       position: sticky;
@@ -133,45 +133,59 @@
     }
     nav {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
       align-items: center;
-      height: 60px;
+      justify-content: space-between;  /* LEFT: logo, RIGHT: nav-links + toggle */
+      gap: 0.5rem 1rem;
+      padding: 0.5rem 0;
+      min-height: 60px;
     }
     .logo { 
       font-family: var(--font-heading); 
       font-weight: 700; 
       font-size: 1.5rem; 
-      color: var(--primary-color); 
+      color: var(--primary-color);
+      flex-shrink: 0;
     }
-    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links { 
+      display: flex; 
+      gap: 0.8rem; 
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;  /* RIGHT ALIGN items */
+      flex: 1 1 auto;
+    }
     .nav-links a { 
       font-weight: 600; 
       font-size: 1rem; 
-      padding: 0.375rem 0.5rem; 
+      padding: 0.3rem 0.5rem; 
       border-radius: 4px; 
+      white-space: nowrap;
     }
     .nav-links a:hover, .nav-links a.active { 
       background-color: var(--primary-color); 
       color: white; 
     }
 
-    /* ============ DARK MODE TOGGLE BUTTON ============ */
+    /* ============ DARK MODE TOGGLE BUTTON - RIGHT CORNER ============ */
     .theme-toggle {
       background: none;
       border: 2px solid var(--primary-color);
       border-radius: 9999px;
-      padding: 0.4rem 1rem;
-      font-size: 0.9rem;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       transition: all 0.3s ease;
       color: var(--primary-color);
       background-color: transparent;
       font-family: var(--font-body);
       white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 0.25rem;
     }
     .theme-toggle:hover {
       background-color: var(--primary-color);
@@ -493,18 +507,31 @@
     footer a { color: #9ca3af; margin: 0 0.5rem; transition: color 0.3s ease; }
     footer a:hover { color: white; }
 
-    /* ============ RESPONSIVE ============ */
+    /* ============ RESPONSIVE: MOBILE FIRST ============ */
     @media (max-width: 768px) {
-      nav { flex-wrap: wrap; height: auto; padding: 0.5rem 0; }
+      nav { 
+        flex-direction: column; 
+        align-items: stretch; 
+        gap: 0.5rem;
+        padding: 0.5rem 0.5rem;
+      }
+      .logo { 
+        text-align: center; 
+        margin-bottom: 0.25rem;
+      }
       .nav-links { 
         width: 100%; 
-        justify-content: center; 
-        margin-top: 0.5rem; 
-        gap: 0.8rem; 
-        flex-wrap: wrap; 
+        justify-content: center;  /* center on mobile for better readability */
+        gap: 0.6rem 0.9rem;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.2rem 0.4rem;
       }
       .theme-toggle {
-        padding: 0.3rem 0.8rem;
+        margin-left: 0;
+        padding: 0.2rem 0.7rem;
         font-size: 0.8rem;
       }
       #about .container { flex-direction: column; align-items: center; }
@@ -515,6 +542,9 @@
     @media (max-width: 480px) {
       .project-image { height: 170px; }
       #hero h1 { font-size: 1.75rem; }
+      .nav-links { gap: 0.4rem 0.7rem; }
+      .nav-links a { font-size: 0.8rem; padding: 0.15rem 0.3rem; }
+      .theme-toggle { font-size: 0.7rem; padding: 0.15rem 0.6rem; }
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -629,7 +659,7 @@
       <a href="#portfolio" class="nav-link" aria-label="Navigate to Portfolio section">Portfolio</a>
       <a href="#certifications" class="nav-link" aria-label="Navigate to Certifications section">Certifications</a>
       <a href="#contact" class="nav-link" aria-label="Navigate to Contact section">Contact</a>
-      <!-- ============ DARK MODE TOGGLE BUTTON ============ -->
+      <!-- ============ DARK MODE TOGGLE BUTTON - RIGHT CORNER ============ -->
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon" id="themeIcon"></i>
         <span class="toggle-text" id="toggleText">Dark Mode</span>
@@ -870,7 +900,11 @@
     sections.forEach(section => {
       if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
         navLinks.forEach(link => link.classList.remove("active"));
-        document.querySelector(`.nav-links a[href="#${section.id}"]`)?.classList.add("active");
+        // Find the corresponding nav link using the section id
+        const correspondingLink = document.querySelector(`.nav-links a[href="#${section.id}"]`);
+        if (correspondingLink) {
+          correspondingLink.classList.add("active");
+        }
       }
     });
   });
