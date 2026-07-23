@@ -83,6 +83,8 @@
       --project-image-bg: #f8fafc;
       --project-image-pattern: #e2e8f0;
       --hero-text: #d1d5db;
+      --input-bg: white;
+      --input-text: #374151;
     }
 
     /* ============ DARK MODE OVERRIDES ============ */
@@ -106,6 +108,8 @@
       --project-image-bg: #1e293b;
       --project-image-pattern: #334155;
       --hero-text: #94a3b8;
+      --input-bg: #1e293b;
+      --input-text: #e2e8f0;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -135,7 +139,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;  /* LEFT: logo, RIGHT: nav-links + toggle */
+      justify-content: space-between;
       gap: 0.5rem 1rem;
       padding: 0.5rem 0;
       min-height: 60px;
@@ -152,7 +156,7 @@
       gap: 0.8rem; 
       align-items: center;
       flex-wrap: wrap;
-      justify-content: flex-end;  /* RIGHT ALIGN items */
+      justify-content: flex-end;
       flex: 1 1 auto;
     }
     .nav-links a { 
@@ -461,40 +465,112 @@
     #contact h2 { 
       font-family: var(--font-heading); 
       font-size: 2rem; 
-      margin-bottom: 2rem; 
+      margin-bottom: 1.5rem; 
       color: var(--primary-color); 
       text-align: center; 
     }
-    #contact .container { max-width: 600px; margin: 0 auto; }
+    #contact .container { max-width: 640px; margin: 0 auto; }
     #contact p { text-align: center; font-size: 1.125rem; margin-bottom: 1.5rem; }
-    #contact input, #contact textarea {
+
+    /* --- Contact Form Styles --- */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 0.5rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .form-group label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-body);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .form-group label i {
+      color: var(--primary-color);
+      width: 1.2rem;
+      text-align: center;
+    }
+    .form-group input,
+    .form-group textarea {
       padding: 0.75rem 1rem;
       font-size: 1rem;
       border: 2px solid var(--border-color);
       border-radius: 8px;
       font-family: var(--font-body);
       transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-      background-color: var(--bg-body);
-      color: var(--text-body);
+      background-color: var(--input-bg);
+      color: var(--input-text);
+      width: 100%;
     }
-    #contact input:focus, #contact textarea:focus { 
+    .form-group input:focus,
+    .form-group textarea:focus { 
       outline: none; 
       border-color: var(--primary-color); 
-      box-shadow: 0 0 5px var(--primary-color); 
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25); 
     }
-    #contact textarea { resize: vertical; min-height: 120px; }
-    #contact button {
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .contact-form button {
       background-color: var(--primary-color);
       color: white;
       font-weight: 700;
-      padding: 0.75rem 0;
+      padding: 0.85rem 0;
       font-size: 1.125rem;
       border: none;
       border-radius: 9999px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 0.25rem;
     }
-    #contact button:hover { background-color: var(--accent-color); }
+    .contact-form button:hover { 
+      background-color: var(--accent-color); 
+      transform: scale(1.02);
+    }
+    .contact-form button:active { transform: scale(0.98); }
+    .contact-form button i { font-size: 1.1rem; }
+
+    /* Form status messages */
+    .form-status {
+      text-align: center;
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      display: none;
+    }
+    .form-status.success {
+      display: block;
+      background-color: #d1fae5;
+      color: #065f46;
+      border: 1px solid #34d399;
+    }
+    .form-status.error {
+      display: block;
+      background-color: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #f87171;
+    }
+    body.dark-mode .form-status.success {
+      background-color: #064e3b;
+      color: #a7f3d0;
+      border-color: #34d399;
+    }
+    body.dark-mode .form-status.error {
+      background-color: #7f1d1d;
+      color: #fca5a5;
+      border-color: #f87171;
+    }
 
     /* ============ FOOTER ============ */
     footer { 
@@ -521,7 +597,7 @@
       }
       .nav-links { 
         width: 100%; 
-        justify-content: center;  /* center on mobile for better readability */
+        justify-content: center;
         gap: 0.6rem 0.9rem;
         flex-wrap: wrap;
       }
@@ -550,7 +626,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- ============ SCHEMA.ORG STRUCTURED DATA ============ -->
-  <!-- Person Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -580,7 +655,6 @@
   }
   </script>
   
-  <!-- Portfolio Items Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -620,7 +694,6 @@
   }
   </script>
   
-  <!-- Breadcrumb Schema for better search results -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -659,7 +732,6 @@
       <a href="#portfolio" class="nav-link" aria-label="Navigate to Portfolio section">Portfolio</a>
       <a href="#certifications" class="nav-link" aria-label="Navigate to Certifications section">Certifications</a>
       <a href="#contact" class="nav-link" aria-label="Navigate to Contact section">Contact</a>
-      <!-- ============ DARK MODE TOGGLE BUTTON - RIGHT CORNER ============ -->
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon" id="themeIcon"></i>
         <span class="toggle-text" id="toggleText">Dark Mode</span>
@@ -711,7 +783,6 @@
   <h2>Portfolio Projects</h2>
   <div id="portfolio-grid">
     
-    <!-- Project 1: Leantex -->
     <article class="project-card" itemscope itemtype="https://schema.org/SoftwareApplication">
       <img class="project-image" src="leantex-home-pic.png" alt="Leantex Company Limited website - Django-based business management platform" loading="lazy" itemprop="screenshot">
       <div class="project-content">
@@ -730,7 +801,6 @@
       </div>
     </article>
   
-    <!-- Project 2: Developer Toolkit Hub -->
     <article class="project-card" itemscope itemtype="https://schema.org/SoftwareApplication">
       <img class="project-image" src="devtoolkit.png" alt="Developer Toolkit Hub - all-in-one dashboard for developer tools" loading="lazy" itemprop="screenshot">
       <div class="project-content">
@@ -749,7 +819,6 @@
       </div>
     </article>
     
-    <!-- Project 3: SSD Lifespan Analyzer -->
     <article class="project-card" itemscope itemtype="https://schema.org/SoftwareApplication">
       <img class="project-image" src="ssd-lifespan-analyzer.png" alt="SSD Lifespan Analyzer - cross-platform drive health analysis tool" loading="lazy" itemprop="screenshot">
       <div class="project-content">
@@ -768,7 +837,6 @@
       </div>
     </article>
 
-    <!-- Project 4: AI Model Development -->
     <article class="project-card" itemscope itemtype="https://schema.org/SoftwareApplication">
       <img class="project-image" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Artificial Intelligence and Machine Learning model development" loading="lazy" itemprop="screenshot">
       <div class="project-content">
@@ -787,7 +855,6 @@
       </div>
     </article>
 
-    <!-- Project 5: Foxwide Company -->
     <article class="project-card" itemscope itemtype="https://schema.org/SoftwareApplication">
       <img class="project-image" src="foxwide-company-limited-screenshot.png" alt="Foxwide Company Limited - responsive business website" loading="lazy" itemprop="screenshot">
       <div class="project-content">
@@ -814,7 +881,6 @@
   <h2>Certifications &amp; Credentials</h2>
   <div class="cert-grid">
     
-    <!-- Certification 1: Responsive Web Design -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
         <img src="freecode-logo.png" alt="FreeCodeCamp certification logo" width="50" height="50" loading="lazy">
@@ -825,7 +891,6 @@
       <a href="responsive-web-design.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
     </div>
 
-    <!-- Certification 2: AI Fundamentals -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
         <img src="IBM-logo.jpg" alt="IBM certification logo" width="50" height="50" loading="lazy">
@@ -836,7 +901,6 @@
       <a href="IBM-AI-fundamentals-certificate.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
     </div>
 
-    <!-- Certification 3: Cybersecurity Fundamentals -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
         <img src="IBM-logo.jpg" alt="IBM cybersecurity certification logo" width="50" height="50" loading="lazy">
@@ -847,7 +911,6 @@
       <a href="Cyber-security-certificate.png" target="_blank" rel="noopener noreferrer" itemprop="url">View Certificate</a>
     </div>
 
-    <!-- Certification 4: Generative AI in Action -->
     <div class="cert-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
       <div class="cert-icon">
         <img src="IBM-logo.jpg" alt="IBM Generative AI certification logo" width="50" height="50" loading="lazy">
@@ -860,18 +923,61 @@
   </div>
 </section>
 
-<!-- ============ CONTACT SECTION ============ -->
+<!-- ============ CONTACT SECTION WITH FORMSUBMIT.CO ============ -->
 <section id="contact" aria-label="Contact Brayson Imbambi">
   <h2>Get In Touch</h2>
   <div class="container">
     <p>Have a project in mind or just want to say hello? I'd love to hear from you!</p>
-    <div style="text-align:center; margin-top: 2rem;">
+    
+    <!-- Contact Form with FormSubmit.co -->
+    <form class="contact-form" id="contactForm" action="https://formsubmit.co/braysonimbambi455@gmail.com" method="POST">
+      <!-- Honeypot to prevent spam -->
+      <input type="text" name="_honey" style="display:none">
+      <!-- Disable captcha (optional) -->
+      <input type="hidden" name="_captcha" value="false">
+      <!-- Redirect after submission (optional) -->
+      <input type="hidden" name="_next" value="https://braysonimbambi.dev/#contact">
+      
+      <div class="form-group">
+        <label for="name"><i class="fas fa-user"></i> Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Project inquiry or general message" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
+        <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+      </div>
+      
+      <button type="submit" id="submitBtn">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+      
+      <div id="formStatus" class="form-status"></div>
+    </form>
+    
+    <!-- Alternative contact details -->
+    <div style="text-align:center; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 2px solid var(--border-color);">
+      <p style="margin-bottom: 0.5rem;">
+        <strong><i class="fas fa-phone-alt" style="color: var(--primary-color);"></i> Phone:</strong> 
+        <a href="tel:+254793814747" aria-label="Call Brayson Imbambi">+254 793 814 747</a>
+      </p>
+      <p style="margin-bottom: 0.5rem;">
+        <strong><i class="fas fa-envelope" style="color: var(--primary-color);"></i> Email:</strong> 
+        <a href="mailto:braysonimbambi455@gmail.com">braysonimbambi455@gmail.com</a>
+      </p>
       <p>
-        <strong>Email:</strong> <a href="mailto:braysonimbambi455@gmail.com" aria-label="Send email to Brayson Imbambi">braysonimbambi455@gmail.com</a><br/>
-        <strong>Phone:</strong> <a href="tel:+254793814747" aria-label="Call Brayson Imbambi">+254 793 814 747</a><br/>
-        <strong>WhatsApp:</strong> 
-        <a href="https://wa.me/254793814747" target="_blank" rel="noopener noreferrer" aria-label="Chat with Brayson on WhatsApp">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp chat icon" width="24" height="24" style="vertical-align:middle; margin-right:5px;">
+        <strong><i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp:</strong> 
+        <a href="https://wa.me/254793814747" target="_blank" rel="noopener noreferrer">
           Chat with me
         </a>
       </p>
@@ -900,7 +1006,6 @@
     sections.forEach(section => {
       if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
         navLinks.forEach(link => link.classList.remove("active"));
-        // Find the corresponding nav link using the section id
         const correspondingLink = document.querySelector(`.nav-links a[href="#${section.id}"]`);
         if (correspondingLink) {
           correspondingLink.classList.add("active");
@@ -928,7 +1033,6 @@
     const toggleText = document.getElementById('toggleText');
     const body = document.body;
 
-    // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
       body.classList.add('dark-mode');
@@ -937,11 +1041,9 @@
       toggleText.textContent = 'Light Mode';
     }
 
-    // Toggle theme on button click
     toggleBtn.addEventListener('click', function() {
       body.classList.toggle('dark-mode');
       
-      // Update icon and text
       if (body.classList.contains('dark-mode')) {
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
@@ -952,6 +1054,55 @@
         themeIcon.classList.add('fa-moon');
         toggleText.textContent = 'Dark Mode';
         localStorage.setItem('theme', 'light');
+      }
+    });
+  })();
+
+  // ============ CONTACT FORM HANDLING WITH FORMSUBMIT.CO ============
+  (function() {
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Clear previous status
+      statusDiv.className = 'form-status';
+      statusDiv.style.display = 'none';
+      
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      
+      try {
+        const formData = new FormData(form);
+        
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          statusDiv.className = 'form-status success';
+          statusDiv.style.display = 'block';
+          statusDiv.textContent = '✅ Your message was sent successfully! I\'ll get back to you soon.';
+          form.reset();
+        } else {
+          throw new Error('Server responded with ' + response.status);
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        statusDiv.className = 'form-status error';
+        statusDiv.style.display = 'block';
+        statusDiv.textContent = '❌ Oops! Something went wrong. Please try again or email me directly at braysonimbambi455@gmail.com';
+      } finally {
+        // Re-enable button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
       }
     });
   })();
